@@ -48,6 +48,7 @@ public class Cliente {
      * @return DNI Cliente
      */
     public String getDni() {
+
         return dni;
     }
 
@@ -57,6 +58,7 @@ public class Cliente {
      * @return email Cliente
      */
     public String getEmail() {
+
         return email;
     }
 
@@ -67,6 +69,7 @@ public class Cliente {
      */
 
     public String getTelefono() {
+
         return telefono;
     }
 
@@ -88,6 +91,7 @@ public class Cliente {
      * @param dni Nuevo DNI cliente
      */
     public void setDni(String dni) {
+
         this.dni = dni;
     }
 
