@@ -3,19 +3,36 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Clase de pruebas unitarias para {@link Libro}.
+ *
+ * Verifica:
+ *     Que el constructor asigne correctamente los valores iniciales.
+ *     Que los métodos getters obtengan los datos correctos.
+ *     Que los métodos setters permitan modificar los atributos.
+ *     Que el método {@code toString()} incluya todos los datos relevantes del libro.
+ *
+ * @author Daniel
+ * @version 1.0
+ */
 class LibroTest {
+    /** Objeto libro usado como ejemplo en las pruebas */
+
     private Libro libro;
 
     /**
-     * Comprobamos el constructor
+     * Configuración inicial que se ejecuta antes de cada prueba.
+     * Crea un objeto {@link Libro} con datos de ejemplo para las verificaciones.
      */
+
     @BeforeEach
     void setUp(){
         libro = new Libro("El principito", "Antoine Roger", "9783140464079", 19.99);
     }
 
     /**
-     * GettersTest.
+     * Verifica que los getters devuelvan los valores correctos
+     * que fueron establecidos al crear el objeto con el constructor.
      */
     @Test
     void testGetters(){
@@ -24,8 +41,10 @@ class LibroTest {
         assertEquals("9783140464079", libro.getIsbn());
         assertEquals(19.99, libro.getPrecio());
     }
+
     /**
-     * SettersTest
+     * Verifica que los setters modifiquen correctamente
+     * los atributos del {@link Libro}.
      */
     @Test
     void testSetters(){
@@ -41,15 +60,17 @@ class LibroTest {
     }
 
     /**
-     * ToStringTest
+     * Verifica que el método {@code toString()} del {@link Libro}
+     * incluya todos los datos relevantes: título, autor, ISBN y precio.
      */
+
     @Test
     void testToString() {
-        String texto = libro.toString();
-        assertTrue(texto.contains("El principito"));
-        assertTrue(texto.contains("Antoine Roger"));
-        assertTrue(texto.contains("9783140464079"));
-        assertTrue(texto.contains("19.99"));
+        String textoLibro = libro.toString();
+        assertTrue(textoLibro.contains("El principito"));
+        assertTrue(textoLibro.contains("Antoine Roger"));
+        assertTrue(textoLibro.contains("9783140464079"));
+        assertTrue(textoLibro.contains("19.99"));
     }
 
 }

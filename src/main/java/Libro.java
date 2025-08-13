@@ -1,38 +1,57 @@
-public class Libro {
-    /**
-     * Representa un Libro/Producto de la librería
-     *
-     * @author Daniel Martin
-     * @version 1.0
-     */
+/**
+ * Representa un libro o producto de la librería.
+ *
+ * Contiene la información básica como título, autor, código ISBN y precio.
+ * Permite consultar y modificar cada uno de estos atributos
+ * mediante sus métodos getters y setters.
+ *
+ * @author Daniel Martin
+ * @version 1.0
+ */
 
-    // Atributos
+public class Libro {
+
+    // ===================== ATRIBUTOS =====================
+
+    /** Título del libro */
 
     private String titulo;
+
+    /** Autor del libro */
+
     private String autor;
+
+    /** Código ISBN único del libro */
+
     private String isbn;
+
+    /** Precio del libro */
+
     private double precio;
+
+    // ===================== CONSTRUCTOR =====================
 
     /**
      * Constructor de la clase Libro.
      *
-     * @param titulo  Título del libro.
-     * @param autor   Autor del libro.
-     * @param isbn    Código ISBN único del libro.
-     * @param precio  Precio del libro.
+     * @param titulo Título del libro.
+     * @param autor  Autor del libro.
+     * @param isbn   Código ISBN único del libro.
+     * @param precio Precio del libro.
      */
-    // Constructor
 
-    public Libro (String titulo, String autor, String isbn, double precio){
+    public Libro(String titulo, String autor, String isbn, double precio) {
         this.autor = autor;
         this.titulo = titulo;
         this.isbn = isbn;
         this.precio = precio;
     }
 
-    // Getters
+    // ===================== GETTERS =====================
+
     /**
      * Devuelve el título del libro
+     *
      * @return título del libro
      */
     public String getTitulo() {
@@ -41,6 +60,7 @@ public class Libro {
 
     /**
      * Devuelve el autor del libro
+     *
      * @return autor del libro
      */
     public String getAutor() {
@@ -49,37 +69,46 @@ public class Libro {
 
     /**
      * Devuelve el isbn del libro
+     *
      * @return isbn del libro
      */
     public String getIsbn() {
         return isbn;
     }
+
     /**
      * Devuelve el precio del libro
+     *
      * @return precio del libro
      */
     public double getPrecio() {
         return precio;
     }
 
-    // Setters
+    // ===================== SETTERS =====================
+
     /**
      * Modifica el título del libro
+     *
      * @param titulo nuevo título
      */
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
     /**
      * Modifica el autor del libro
+     *
      * @param autor nuevo autor
      */
     public void setAutor(String autor) {
         this.autor = autor;
     }
+
     /**
      * Modifica el ISBN del libro
+     *
      * @param isbn nuevo código ISBN
      */
     public void setIsbn(String isbn) {
@@ -88,17 +117,22 @@ public class Libro {
 
     /**
      * Modifica el precio del libro
+     *
      * @param precio nuevo precio
      */
     public void setPrecio(double precio) {
         this.precio = precio;
     }
 
-    // Representación en cadena de texto
+    // ===================== toString =====================
+
     /**
-     * Devuelve una cadena con toda la información del libro
-     * @return información del libro formateada
+     * Devuelve una representación en cadena de texto del libro,
+     * incluyendo título, autor, ISBN y precio.
+     *
+     * @return información del libro formateada como cadena
      */
+
     @Override
     public String toString() {
         return "Libro{" +
@@ -107,5 +141,5 @@ public class Libro {
                 ", isbn='" + isbn + '\'' +
                 ", precio=" + precio +
                 '}';
-}
+    }
 }

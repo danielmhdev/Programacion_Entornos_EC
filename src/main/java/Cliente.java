@@ -1,18 +1,36 @@
-public class Cliente {
-    /**
-     * Representa un Cliente de la librería
-     *
-     * @author Daniel Martin
-     * @version 1.0
-     */
 
-    // Atributos
+/**
+ * Representa a un cliente de la librería.
+ *
+ * Contiene los datos personales y de contacto del cliente:
+ * nombre, DNI, teléfono y correo electrónico.
+ * Permite consultar y modificar esta información mediante sus métodos getters y setters.
+ *
+ *  @author Daniel
+ *  @version 1.0
+ */
+
+ public class Cliente {
+
+    // ===================== ATRIBUTOS =====================
+
+    /** Nombre completo del cliente */
+
     private String nombre;
+
+    /** Documento Nacional de Identidad del cliente */
+
     private String dni;
+
+    /** Número de teléfono del cliente */
+
     private String telefono;
+
+    /** Dirección de correo electrónico del cliente */
+
     private String email;
 
-    // Constructor
+    // ===================== CONSTRUCTOR =====================
 
     /**
      * Constructor de la clase Cliente:
@@ -30,7 +48,7 @@ public class Cliente {
         this.email = email;
     }
 
-    // Métodos (getters)
+    // ===================== GETTERS =====================
 
     /**
      * Devuelve el nombre del cliente
@@ -73,10 +91,10 @@ public class Cliente {
         return telefono;
     }
 
-    // Métodos (setters)
+    // ===================== GETTERS =====================
 
     /**
-     * Metodo para modificar el nombre de un cliente
+     * Módifica el nombre de un cliente
      *
      * @param nombre Nuevo nombre cliente
      */
@@ -86,7 +104,7 @@ public class Cliente {
     }
 
     /**
-     * Metodo para modificar el DNI de un cliente
+     * Módifica el DNI de un cliente
      *
      * @param dni Nuevo DNI cliente
      */
@@ -96,7 +114,7 @@ public class Cliente {
     }
 
     /**
-     * Metodo para modificar el email de un cliente
+     * Módifica el email de un cliente
      *
      * @param email Nuevo email cliente
      */
@@ -105,7 +123,7 @@ public class Cliente {
     }
 
     /**
-     * Metodo para modificar el Telefono de un cliente
+     * Módifica el Telefono de un cliente
      *
      * @param telefono Nuevo Teléfono cliente
      */
@@ -113,6 +131,8 @@ public class Cliente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    // ===================== toString =====================
 
     /**
      * Devuelve un resumen completo de la información del cliente
