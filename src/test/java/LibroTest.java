@@ -27,7 +27,7 @@ class LibroTest {
 
     @BeforeEach
     void setUp(){
-        libro = new Libro("El principito", "Antoine Roger", "9783140464079", 19.99);
+        libro = new Libro("El Principito", "Antoine Roger", "9783140464079", 19.99);
     }
 
     /**

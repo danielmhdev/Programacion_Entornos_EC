@@ -25,7 +25,7 @@ class ClienteTest {
      */
     @BeforeEach
     void setUp() {
-        cliente = new Cliente("Daniel", "24422914K", "667859878", "prueba@mail.com");
+        cliente = new Cliente("Daniel", "24422914K", "667 859 878", "prueba@mail.com");
     }
 
     /**
