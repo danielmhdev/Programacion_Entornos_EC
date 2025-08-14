@@ -40,10 +40,14 @@ public class Main {
                     gestionLibro.menuLibros();
                     break;
                 case 3:
-                    //realizarVenta();
+                    gestionVenta.menuVentas(gestionCliente,gestionLibro);
                     break;
                 case 4:
-                    //mostrarVentas();
+                    if (gestionVenta.listarVentas().isEmpty()) {
+                        System.out.println("No hay ventas registradas.");
+                    } else {
+                        gestionVenta.listarVentas().forEach(System.out::println);
+                    }
                     break;
                 case 5:
                     System.out.println("Saliendo del programa...");

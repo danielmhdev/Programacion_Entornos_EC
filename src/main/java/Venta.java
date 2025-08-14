@@ -71,7 +71,7 @@ import java.util.ArrayList;
         return fecha;
     }
 
-    // ===================== MÉTODOS =====================
+    // ===================== SETTERS =====================
 
     /**
      * Añade un libro a la lista de libros vendidos en esta venta.
