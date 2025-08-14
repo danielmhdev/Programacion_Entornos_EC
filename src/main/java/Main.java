@@ -37,7 +37,7 @@ public class Main {
                     gestionCliente.menuClientes();
                     break;
                 case 2:
-                    //menuGestionLibros();
+                    gestionLibro.menuLibros();
                     break;
                 case 3:
                     //realizarVenta();
