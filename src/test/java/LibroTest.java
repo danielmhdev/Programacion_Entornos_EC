@@ -60,7 +60,7 @@ class LibroTest {
     }
 
     /**
-     * Verifica que el método {@code toString()} del {@link Libro}
+     * Verifica que el mé_todo {@code toString()} del {@link Libro}
      * incluya todos los datos relevantes: título, autor, ISBN y precio.
      */
 

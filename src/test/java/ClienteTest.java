@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *     Que el constructor asigna correctamente los valores de los atributos.
  *     Que los métodos getters devuelven la información correcta.
  *     Que los métodos setters permiten modificar los datos del cliente.
- *     Que el método {@code toString()} devuelve una cadena que contiene todos los datos relevantes.
+ *     Que el mé_todo {@code toString()} devuelve una cadena que contiene todos los datos relevantes.
  *
  * @author Daniel
  * @version 1.0
@@ -59,7 +59,7 @@ class ClienteTest {
     }
 
     /**
-     * Prueba que el método {@code toString()} de {@link Cliente}
+     * Prueba que el mé_todo {@code toString()} de {@link Cliente}
      * genere un texto que contenga todos los datos relevantes del cliente.
      */
 
