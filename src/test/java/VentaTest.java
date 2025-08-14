@@ -1,12 +1,18 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Clase de prueba unitaria para la clase {@link Venta}.
- * Verifica la funcionalidad de agregar libros, calcular el total,
- * manejar ventas vacías y generar un texto formateado con {@code toString()}.
+ * Clase de pruebas unitarias para la clase {@link Venta}.
+ * Verifica:
+ *     Que el constructor inicializa correctamente los atributos.
+ *     Que los métodos getters devuelven los valores correctos.
+ *     Que se pueden agregar libros y calcular el total.
+ *     Que si no hay libros, el total es 0.
+ *     Que {@code toString()} incluye los datos relevantes.
  *
  * @author Daniel
  * @version 1.0
@@ -42,28 +48,26 @@ class VentaTest {
     }
 
     /**
-     * Verifica que se pueden agregar varios libros a la venta
-     * y que el número total en la lista coincide con el esperado.
+     * Verifica que los getters devuelven los valores correctos
+     * asignados en el constructor.
      */
     @Test
-    void testAgregarLibro() {
-        venta.agregarLibro(libro1);
-        venta.agregarLibro(libro2);
-
-        assertEquals(2, venta.getLibrosVendidos().size(), "Deberían haberse añadido 2 libros");
+    void testGetters() {
+        assertEquals(cliente, venta.getCliente());
+        assertEquals(0, venta.getLibrosVendidos().size());
+        assertEquals(LocalDate.now(), venta.getFecha());
     }
 
     /**
-     * Comprueba que el cálculo del importe total es correcto
-     * sumando los precios de todos los libros agregados.
-     * Se utiliza un delta de 0.01 para tolerar pequeños errores de redondeo.
+     * Verifica que se pueden añadir libros a la venta y que el cálculo
+     * del total es correcto sumando sus precios.
      */
     @Test
-    void testCalcularTotal(){
+    void testAgregarLibroYCalcularTotal() {
         venta.agregarLibro(libro1);
         venta.agregarLibro(libro2);
-
-        assertEquals(49.98, venta.calcularTotal(), 0.01,  "El total debería ser 49.98€");
+        assertEquals(2, venta.getLibrosVendidos().size());
+        assertEquals(49.98, venta.calcularTotal(), 0.01, "El total debería ser 49.98");
     }
     /**
      * Verifica que si no se añaden libros a la venta,
@@ -75,7 +79,7 @@ class VentaTest {
     }
 
     /**
-     * Comprueba que el método {@code toString()}
+     * Comprueba que el mé_todo {@code toString()}
      * incluya los datos más relevantes de la venta:
      * - Nombre del cliente
      * - Importe total
