@@ -91,7 +91,7 @@
         return telefono;
     }
 
-    // ===================== GETTERS =====================
+    // ===================== SETTERS =====================
 
     /**
      * Módifica el nombre de un cliente
