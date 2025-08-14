@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *     Que el constructor asigne correctamente los valores iniciales.
  *     Que los métodos getters obtengan los datos correctos.
  *     Que los métodos setters permitan modificar los atributos.
- *     Que el método {@code toString()} incluya todos los datos relevantes del libro.
+ *     Que el méto_do {@code toString()} incluya todos los datos relevantes del libro.
  *
  * @author Daniel
  * @version 1.0
@@ -27,7 +27,7 @@ class LibroTest {
 
     @BeforeEach
     void setUp(){
-        libro = new Libro("El Principito", "Antoine Roger", "9783140464079", 19.99);
+        libro = new Libro("El Principito", "Antoine Roger", "ISBN9783140464079", 19.99);
     }
 
     /**

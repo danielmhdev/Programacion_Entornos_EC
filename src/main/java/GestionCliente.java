@@ -11,8 +11,8 @@ import java.util.Scanner;
  * Incluye un submenú interactivo que permite realizar las operaciones
  * desde la consola, solicitando los datos necesarios al usuario.
  *
- * @author Daniel
- * @version 1.0
+ *  @author Daniel
+ *  @version 1.0
  */
 
 public class GestionCliente {
@@ -33,8 +33,6 @@ public class GestionCliente {
 
     // ===================== LÓGICA =====================
 
-    // ------------------ ALTA ------------------
-
     /**
      * Da de alta a un cliente en la lista.
      * No se permite registrar dos clientes con el mismo DNI.
@@ -50,8 +48,6 @@ public class GestionCliente {
         }
         return clientes.add(cliente);
     }
-
-    // ------------------ BAJA ------------------
 
     /**
      * Elimina un cliente según su DNI.
@@ -69,10 +65,8 @@ public class GestionCliente {
         return false; // No se encontró
     }
 
-    // ------------------ MODIFICACIÓN ------------------
-
     /**
-     * Modifica los datos de un cliente existente.
+     * Modifica los datos de un cliente existente buscado por DNI.
      *
      * @param dni DNI del cliente a modificar
      * @param nuevoCliente objeto {@link Cliente} con los nuevos datos
@@ -85,8 +79,6 @@ public class GestionCliente {
             }
         }
     }
-
-    // ------------------ BÚSQUEDA ------------------
 
     /**
      * Busca un cliente por su DNI.
@@ -102,7 +94,6 @@ public class GestionCliente {
         }
         return null;
     }
-    // ------------------ LISTADO ------------------
 
     /**
      * Devuelve la lista completa de clientes.
@@ -116,10 +107,9 @@ public class GestionCliente {
 
     // ======== MENÚ INTERACTIVO MAIN ========
     /**
-     * Muestra el submenú de gestión de clientes y permite al usuario
-     * seleccionar una opción para realizar la acción deseada.
+     * Muestra el submenú de gestión de clientes y ejecuta la acción seleccionada.
      *
-     * Este menú se ejecuta en bucle hasta que el usuario elige la opción "6. Volver".
+     * Se repite hasta que el usuario elige la opción "6. Volver".
      * Se controla además que el usuario introduzca un número válido.
      */
     public void menuClientes() {
@@ -145,11 +135,11 @@ public class GestionCliente {
             // Ejecuta la acción según opción elegida
 
             switch (opcion) {
-                case 1 -> altaInteractiva();
-                case 2 -> bajaInteractiva();
-                case 3 -> modificarInteractiva();
-                case 4 -> buscarInteractivo();
-                case 5 -> listarInteractivo();
+                case 1 -> altaClienteInteractiva();
+                case 2 -> bajaClienteInteractiva();
+                case 3 -> modificarClienteInteractivo();
+                case 4 -> buscarClienteInteractivo();
+                case 5 -> listarClienteInteractivo();
                 case 6 -> System.out.println("Volviendo al menú principal...");
                 default -> System.out.println("Opción inválida.");
             }
@@ -161,7 +151,7 @@ public class GestionCliente {
      * Pide por consola los datos de un nuevo cliente y lo añade a la lista
      * si su DNI no está registrado.
      */
-    private void altaInteractiva() {
+    private void altaClienteInteractiva() {
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
         System.out.print("DNI: ");
@@ -179,10 +169,9 @@ public class GestionCliente {
     }
 
     /**
-     * Solicita el DNI de un cliente y lo elimina de la lista
-     * si existe.
+     * Solicita el DNI de un cliente y lo elimina de la lista si existe.
      */
-    private void bajaInteractiva() {
+    private void bajaClienteInteractiva() {
         System.out.print("DNI del cliente: ");
         String dni = sc.nextLine();
         if (bajaCliente(dni)) {
@@ -195,11 +184,11 @@ public class GestionCliente {
      * Solicita el DNI de un cliente y, si existe, pide los nuevos datos y
      * actualiza su información.
      */
-    private void modificarInteractiva() {
+    private void modificarClienteInteractivo() {
         System.out.print("DNI del cliente: ");
         String dni = sc.nextLine();
-        Cliente c = buscarPorDni(dni);
-        if (c != null) {
+        Cliente cl = buscarPorDni(dni);
+        if (cl != null) {
             System.out.print("Nuevo nombre: ");
             String nombre = sc.nextLine();
             System.out.print("Nuevo teléfono: ");
@@ -217,18 +206,22 @@ public class GestionCliente {
      * Solicita el DNI de un cliente y muestra su información por pantalla
      * si está registrado.
      */
-    private void buscarInteractivo() {
+    private void buscarClienteInteractivo() {
         System.out.print("DNI: ");
         String dni = sc.nextLine();
-        Cliente c = buscarPorDni(dni);
-        System.out.println(c != null ? c : "No encontrado");
+        Cliente cl = buscarPorDni(dni);
+        if (cl != null) {
+            System.out.println(cl);
+        } else {
+            System.out.println("No encontrado");
+        }
     }
 
     /**
      * Muestra en consola la lista de todos los clientes registrados.
      * Si no hay clientes, informa de que la lista está vacía.
      */
-    private void listarInteractivo() {
+    private void listarClienteInteractivo() {
         if (clientes.isEmpty()) {
             System.out.println("No hay clientes registrados.");
         } else {

@@ -1,30 +1,40 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Clase de prueba unitaria para {@link GestionCliente}.
- *
+ * Clase de pruebas unitarias para {@link GestionCliente}.
+ * <p>
  * Verifica:
- *     Alta de clientes (DNI único y repetido)
- *     Baja de clientes existentes y no existentes
- *     Modificación de clientes existentes y no existente
- *     Búsqueda por DNI
- *     Listado de clientes
+ * Alta de clientes (DNI único y repetido)
+ * Baja de clientes existentes y no existentes
+ * Modificación de clientes existentes y no existente
+ * Búsqueda por DNI
+ * Listado de clientes
+ * <p>
+ * No se prueban los métodos interactivos con Scanner, ya que
+ * requieren entrada manual por consola.
  *
- * @author
+ * @author Daniel
  * @version 1.0
  */
 class GestionClienteTest {
-    /** Objeto usado como ejemplo en las pruebas */
+    /**
+     * Objeto usado como ejemplo en las pruebas
+     */
     private GestionCliente gestionCliente;
 
-    /** Cliente de ejemplo para las pruebas */
+    /**
+     * Cliente de ejemplo para las pruebas
+     */
     private Cliente cliente1;
 
-    /** Segundo cliente de ejemplo */
+    /**
+     * Segundo cliente de ejemplo
+     */
     private Cliente cliente2;
 
     /**
@@ -69,6 +79,7 @@ class GestionClienteTest {
         assertTrue(gestionCliente.bajaCliente("12345678A"),
                 "El cliente debería ser eliminado correctamente");
     }
+
     /**
      * Verifica que intentar eliminar un cliente inexistente devuelve false.
      */
@@ -107,7 +118,8 @@ class GestionClienteTest {
     @Test
     void testBuscarPorDni_Existe() {
         gestionCliente.altaCliente(cliente1);
-        assertEquals(cliente1, gestionCliente.buscarPorDni("12345678A"), "El cliente debería encontrarse");
+        assertEquals(cliente1, gestionCliente.buscarPorDni("12345678A"),
+                "El cliente debería encontrarse");
     }
 
     /**
