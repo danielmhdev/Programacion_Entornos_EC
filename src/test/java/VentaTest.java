@@ -8,30 +8,38 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Clase de pruebas unitarias para la clase {@link Venta}.
  * Verifica:
- *     Que el constructor inicializa correctamente los atributos.
- *     Que los métodos getters devuelven los valores correctos.
- *     Que se pueden agregar libros y calcular el total.
- *     Que si no hay libros, el total es 0.
- *     Que {@code toString()} incluye los datos relevantes.
+ * Que el constructor inicializa correctamente los atributos.
+ * Que los métodos getters devuelven los valores correctos.
+ * Que se pueden agregar libros y calcular el total.
+ * Que si no hay libros, el total es 0.
+ * Que {@code toString()} incluye los datos relevantes.
  *
  * @author Daniel
  * @version 1.0
  */
 
 class VentaTest {
-    /** Cliente usado en las pruebas */
+    /**
+     * Cliente usado en las pruebas
+     */
 
     private Cliente cliente;
 
-    /** Primer libro de ejemplo usado en las pruebas */
+    /**
+     * Primer libro de ejemplo usado en las pruebas
+     */
 
     private Libro libro1;
 
-    /** Segundo libro de ejemplo usado en las pruebas */
+    /**
+     * Segundo libro de ejemplo usado en las pruebas
+     */
 
     private Libro libro2;
 
-    /** Venta sobre la que se realizan las pruebas */
+    /**
+     * Venta sobre la que se realizan las pruebas
+     */
 
     private Venta venta;
 
@@ -69,6 +77,7 @@ class VentaTest {
         assertEquals(2, venta.getLibrosVendidos().size());
         assertEquals(49.98, venta.calcularTotal(), 0.01, "El total debería ser 49.98");
     }
+
     /**
      * Verifica que si no se añaden libros a la venta,
      * el importe total calculado sea 0.0.

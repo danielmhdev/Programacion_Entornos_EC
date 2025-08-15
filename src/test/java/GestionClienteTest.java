@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 1.0
  */
 class GestionClienteTest {
+
     /**
      * Objeto usado como ejemplo en las pruebas
      */

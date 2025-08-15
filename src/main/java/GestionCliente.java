@@ -5,22 +5,26 @@ import java.util.Scanner;
 /**
  * Clase para gestionar la lista de clientes de la librería.
  * Permite dar de alta, baja, modificar, buscar y listar clientes.
- *
+ * <p>
  * Cada cliente se identifica de forma única por su DNI.
- *
+ * <p>
  * Incluye un submenú interactivo que permite realizar las operaciones
  * desde la consola, solicitando los datos necesarios al usuario.
  *
- *  @author Daniel
- *  @version 1.0
+ * @author Daniel
+ * @version 1.0
  */
 
 public class GestionCliente {
 
-    /** Lista de clientes registrados en la librería */
+    /**
+     * Lista de clientes registrados en la librería
+     */
     private ArrayList<Cliente> clientes;
 
-    /** Scanner para entrada de datos en los menús interactivos */
+    /**
+     * Scanner para entrada de datos en los menús interactivos
+     */
     private Scanner sc = new Scanner(System.in);
 
     /**
@@ -68,7 +72,7 @@ public class GestionCliente {
     /**
      * Modifica los datos de un cliente existente buscado por DNI.
      *
-     * @param dni DNI del cliente a modificar
+     * @param dni          DNI del cliente a modificar
      * @param nuevoCliente objeto {@link Cliente} con los nuevos datos
      */
     public void modificarCliente(String dni, Cliente nuevoCliente) {
@@ -106,9 +110,10 @@ public class GestionCliente {
 
 
     // ======== MENÚ INTERACTIVO MAIN ========
+
     /**
      * Muestra el submenú de gestión de clientes y ejecuta la acción seleccionada.
-     *
+     * <p>
      * Se repite hasta que el usuario elige la opción "6. Volver".
      * Se controla además que el usuario introduzca un número válido.
      */
@@ -147,6 +152,7 @@ public class GestionCliente {
     }
 
     // ------------------ MÉTODOS INTERACTIVOS MAIN ------------------
+
     /**
      * Pide por consola los datos de un nuevo cliente y lo añade a la lista
      * si su DNI no está registrado.
@@ -180,6 +186,7 @@ public class GestionCliente {
             System.out.println("No se encontró el cliente.");
         }
     }
+
     /**
      * Solicita el DNI de un cliente y, si existe, pide los nuevos datos y
      * actualiza su información.
@@ -227,5 +234,5 @@ public class GestionCliente {
         } else {
             clientes.forEach(System.out::println);
         }
-}
+    }
 }

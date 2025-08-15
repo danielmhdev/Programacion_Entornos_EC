@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 /**
  * Clase para gestionar las ventas realizadas en la librería.
- *
+ * <p>
  * Permite:
- *     Registrar nuevas ventas
- *     Listar todas las ventas
- *     Mostrar ventas de un cliente concreto
- *     Mostrar importe total de cada venta
- *
+ * Registrar nuevas ventas
+ * Listar todas las ventas
+ * Mostrar ventas de un cliente concreto
+ * Mostrar importe total de cada venta
+ * <p>
  * Incluye un submenú interactivo que solicita datos al usuario.
  *
  * @author Daniel
@@ -17,13 +17,19 @@ import java.util.Scanner;
  */
 
 public class GestionVenta {
-    /** Lista de todas las ventas registradas */
+    /**
+     * Lista de todas las ventas registradas
+     */
     private ArrayList<Venta> ventas;
 
-    /** Scanner para interacción de menús */
+    /**
+     * Scanner para interacción de menús
+     */
     private Scanner sc = new Scanner(System.in);
 
-    /** Constructor: inicializa la lista de ventas vacía */
+    /**
+     * Constructor: inicializa la lista de ventas vacía
+     */
     public GestionVenta() {
         this.ventas = new ArrayList<>();
     }
@@ -32,13 +38,16 @@ public class GestionVenta {
 
     /**
      * Registra una nueva venta en la lista.
+     *
      * @param venta venta a añadir
      */
     public void registrarVenta(Venta venta) {
         ventas.add(venta);
     }
+
     /**
      * Devuelve la lista de todas las ventas.
+     *
      * @return lista de ventas
      */
     public ArrayList<Venta> listarVentas() {
@@ -47,6 +56,7 @@ public class GestionVenta {
 
     /**
      * Devuelve las ventas realizadas a un cliente concreto.
+     *
      * @param cliente cliente a buscar
      * @return lista de ventas de ese cliente
      */
@@ -64,8 +74,9 @@ public class GestionVenta {
 
     /**
      * Muestra el submenú de ventas y ejecuta la acción seleccionada.
+     *
      * @param gestionCliente para poder seleccionar un cliente existente
-     * @param gestionLibro para poder seleccionar libros de la lista
+     * @param gestionLibro   para poder seleccionar libros de la lista
      */
     public void menuVentas(GestionCliente gestionCliente, GestionLibro gestionLibro) {
         int opcion;
@@ -99,6 +110,7 @@ public class GestionVenta {
         } while (opcion != 5);
     }
     // ------------------ MÉTODOS INTERACTIVOS MAIN ------------------
+
     /**
      * Crea una nueva venta interactiva seleccionando cliente y libros.
      */
@@ -181,5 +193,5 @@ public class GestionVenta {
                         " - Total: " + v.calcularTotal() + " €");
             }
         }
-}
+    }
 }

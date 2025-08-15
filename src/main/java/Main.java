@@ -40,7 +40,7 @@ public class Main {
                     gestionLibro.menuLibros();
                     break;
                 case 3:
-                    gestionVenta.menuVentas(gestionCliente,gestionLibro);
+                    gestionVenta.menuVentas(gestionCliente, gestionLibro);
                     break;
                 case 4:
                     if (gestionVenta.listarVentas().isEmpty()) {
@@ -58,7 +58,7 @@ public class Main {
         } while (opcion != 5);
     }
 
-    }
+}
 
 
 
