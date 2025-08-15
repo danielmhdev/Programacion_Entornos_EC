@@ -1,6 +1,6 @@
 /**
  * Representa un libro o producto de la librería.
- *
+ * <p>
  * Contiene la información básica como título, autor, código ISBN y precio.
  * Permite consultar y modificar cada uno de estos atributos
  * mediante sus métodos getters y setters.
@@ -13,19 +13,27 @@ public class Libro {
 
     // ===================== ATRIBUTOS =====================
 
-    /** Título del libro */
+    /**
+     * Título del libro
+     */
 
     private String titulo;
 
-    /** Autor del libro */
+    /**
+     * Autor del libro
+     */
 
     private String autor;
 
-    /** Código ISBN único del libro */
+    /**
+     * Código ISBN único del libro
+     */
 
     private String isbn;
 
-    /** Precio del libro */
+    /**
+     * Precio del libro
+     */
 
     private double precio;
 

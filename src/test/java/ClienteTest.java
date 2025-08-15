@@ -2,20 +2,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * Clase de pruebas unitarias para {@link Cliente}.
- *
+ * <p>
  * Verifica:
- *     Que el constructor asigna correctamente los valores de los atributos.
- *     Que los métodos getters devuelven la información correcta.
- *     Que los métodos setters permiten modificar los datos del cliente.
- *     Que el mé_todo {@code toString()} devuelve una cadena que contiene todos los datos relevantes.
+ * Que el constructor asigna correctamente los valores de los atributos.
+ * Que los métodos getters devuelven la información correcta.
+ * Que los métodos setters permiten modificar los datos del cliente.
+ * Que el mé_todo {@code toString()} devuelve una cadena que contiene todos los datos relevantes.
  *
  * @author Daniel
  * @version 1.0
  */
 class ClienteTest {
-    /** Cliente usado como ejemplo en las pruebas */
+    /**
+     * Cliente usado como ejemplo en las pruebas
+     */
 
     private Cliente cliente;
 
@@ -25,7 +28,7 @@ class ClienteTest {
      */
     @BeforeEach
     void setUp() {
-        cliente = new Cliente("Daniel", "24422914K", "667 859 878", "prueba@mail.com");
+        cliente = new Cliente("Daniel", "24422914K", "667859878", "prueba@mail.com");
     }
 
     /**

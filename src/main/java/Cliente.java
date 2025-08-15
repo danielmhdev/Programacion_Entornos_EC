@@ -1,32 +1,40 @@
 
 /**
  * Representa a un cliente de la librería.
- *
+ * <p>
  * Contiene los datos personales y de contacto del cliente:
  * nombre, DNI, teléfono y correo electrónico.
  * Permite consultar y modificar esta información mediante sus métodos getters y setters.
  *
- *  @author Daniel
- *  @version 1.0
+ * @author Daniel
+ * @version 1.0
  */
 
- public class Cliente {
+public class Cliente {
 
     // ===================== ATRIBUTOS =====================
 
-    /** Nombre completo del cliente */
+    /**
+     * Nombre completo del cliente
+     */
 
     private String nombre;
 
-    /** Documento Nacional de Identidad del cliente */
+    /**
+     * Documento Nacional de Identidad del cliente
+     */
 
     private String dni;
 
-    /** Número de teléfono del cliente */
+    /**
+     * Número de teléfono del cliente
+     */
 
     private String telefono;
 
-    /** Dirección de correo electrónico del cliente */
+    /**
+     * Dirección de correo electrónico del cliente
+     */
 
     private String email;
 
